@@ -135,7 +135,7 @@
                 
             <hr class="mb-4">
             <button v-if="!editMode && !deleteMode" v-on:click="createLamarans" class="btn btn-success btn-lg btn-block" type="submit">Submit Data</button>
-            <button v-if="editMode" v-on:click="updateLamarans" class="btn btn-info btn-lg btn-block" type="submit">Perbaharuiata</button>
+            <button v-if="editMode" v-on:click="updateLamarans" class="btn btn-info btn-lg btn-block" type="submit">Perbaharui Data</button>
             <button v-if="deleteMode" v-on:click="deleteLamarans" class="btn btn-danger btn-lg btn-block" type="submit">Hapus Data</button>
           
         </div>
@@ -235,7 +235,7 @@
                     this.memohon_kerja = lamarans.memohon_kerja;
                     this.status_tinggal = lamarans.status_tinggal;
                 },
-                getDelete: function (mlamarans) {
+                getDelete: function (lamarans) {
                     this.message = null;
                     this.deleteMode = true;
                     this.editMode = false;
@@ -263,7 +263,7 @@
                         .then(res => {
                             // handle success
                             this.message = "Data anda telah diperbaharui";
-                            this.getMahasiswas();
+                            this.getLamarans();
                         })
                         .catch(err => {
                             // handle error
@@ -287,6 +287,6 @@
         })
         
     </script>
-    
+
 </body>
 </html>
